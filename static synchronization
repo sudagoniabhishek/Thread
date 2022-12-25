@@ -1,0 +1,40 @@
+package com.palle;
+
+public class Database {
+
+	public static void main(String[] args) {
+		
+		Thread1 t1=new Thread1();
+		Thread2 t2=new Thread2();
+		t1.start();
+		t2.start();
+	}
+}
+class Sample{
+	synchronized static void print(int n)
+	{
+		
+		for(int i=1;i<=5;i++) {
+			System.out.println(n+i);
+			try {
+				Thread.sleep(200);
+			}
+			catch(Exception ex) {
+				
+			}
+		}
+	}
+}
+
+class Thread1 extends Thread{
+	
+	public void run() {
+		Sample.print(5);
+	}
+}
+class Thread2 extends Thread{
+	
+	public void run() {
+		Sample.print(100);
+	}
+}
