@@ -1,0 +1,31 @@
+package com.palle;
+
+public class Employee {
+
+	public static void main(String[] args) {
+	
+		
+		Sample1 s1=new Sample1();
+		Sample2 s2=new Sample2();
+		s2.setPriority(Thread.MIN_PRIORITY);
+		s1.setPriority(Thread.MAX_PRIORITY);
+		s1.start();
+		s2.start();
+		
+	
+	}
+}
+class Sample1 extends Thread{
+	public void run() {
+		System.out.println("Iam going to home ");
+		System.out.println("welcome home");
+	}
+	
+}
+class Sample2 extends Thread{
+	public void run() {
+		System.out.println("I am going to Hyderabad");
+		System.out.println("welcome hyderabad");
+	}
+	
+}
